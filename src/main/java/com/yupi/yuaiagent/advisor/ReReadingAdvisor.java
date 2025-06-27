@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
-
+    6.27增加推理能力拦截器
  */
 
 public class ReReadingAdvisor implements CallAroundAdvisor, StreamAroundAdvisor {
