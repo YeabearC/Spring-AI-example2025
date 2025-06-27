@@ -1,6 +1,7 @@
 package com.yupi.yuaiagent.app;
 
 import com.yupi.yuaiagent.advisor.MyLoggerAdvisor;
+import com.yupi.yuaiagent.advisor.ReReadingAdvisor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
@@ -32,6 +33,7 @@ public class HappyApp {
                         new MessageChatMemoryAdvisor(chatMemory),
 //                      new SimpleLoggerAdvisor() // 6.26 用于打印日志，输出我们需要的DEBUG日志
                         new MyLoggerAdvisor() //6.27 自己定义的拦截器
+//                        new ReReadingAdvisor()
                 )
                 .build();
     }
