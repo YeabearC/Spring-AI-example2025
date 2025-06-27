@@ -4,9 +4,6 @@ spring:
   ai:
     dashscope:
       api-key: sk-5d19de56ff744c26806997e1bb2b293d
-      chat:
-        options:
-          model: qwen-plus
 
     ollama:
       base-url: http://localhost:11434
@@ -37,3 +34,23 @@ knife4j:
   enable: true
   setting:
     language: zh_cn
+
+# 6.26 日志输出等级
+#  在日志系统中，输出等级（Log Levels）是用来标记日志严重性和优先级的。不同框架可能有细微差异，但大致排序（从最低到最高）如下：
+#  TRACE：最详细的日志级别，记录每个步骤或函数调用，常用于调试底层流程。
+#  DEBUG：用于调试信息，记录开发和排查时有用的细节。
+#  INFO：一般性运行信息，比如服务启动、请求成功等关键但不异常的行为。
+#  WARN：潜在问题，例如配置不推荐、连接延迟等，但程序仍能正常运行。
+#  ERROR：出现错误但程序未崩溃，例如数据库访问失败、接口调用异常等。
+#  FATAL（或 SEVERE）：最严重级别，通常会导致应用程序中断或退出。
+# 日志中有大量数据。全部显示会影响性能，所以一般只显示INFO及以上的日志。
+#DEBUG输出等级低于INFO，所以如果我们想获取DEBUG的日志，需要如下的代码,强制指定某个日志输出
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor:
+                SimpleLoggerAdvisor: INFO #DEBUG
