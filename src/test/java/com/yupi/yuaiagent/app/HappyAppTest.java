@@ -23,16 +23,16 @@ public class HappyAppTest {
         Assertions.assertNotNull(response);
 
 
-//        //第二轮
-//        message = "我想让我的另一半（编程校园），更喜欢我";
-//        response = happyApp.chat(message, chatId);
-//        Assertions.assertNotNull(response);
-//
-//
-//        //第三轮
-//        message = "我的另一半叫什么名字，刚刚我讲过的，你帮我回忆一下";
-//        response = happyApp.chat(message, chatId);
-//        Assertions.assertNotNull(response);
+        //第二轮
+        message = "我想让我的另一半（编程校园），更喜欢我";
+        response = happyApp.chat(message, chatId);
+        Assertions.assertNotNull(response);
+
+
+        //第三轮
+        message = "我的另一半叫什么名字，刚刚我讲过的，你帮我回忆一下";
+        response = happyApp.chat(message, chatId);
+        Assertions.assertNotNull(response);
 
     }
 
